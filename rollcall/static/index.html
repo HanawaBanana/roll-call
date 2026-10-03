@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roll Call - offline check-in for a small class</title>
+<meta name="description" content="Offline-first check-in and attendance for a class, club or workshop. Rotating codes, hash-chained log, anomaly flags.">
+<link rel="stylesheet" href="/static/app.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>&#9989;</text></svg>">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">RC</span>
+    <div class="brand-text">
+      <strong>Roll&nbsp;Call</strong>
+      <span class="brand-sub">offline check-in &amp; attendance &middot; no accounts, no cloud</span>
+    </div>
+  </div>
+  <nav class="tabs" id="tabs">
+    <a href="/?view=session" data-view="session">Session</a>
+    <a href="/check-in" data-view="checkin">Check-in</a>
+    <a href="/?view=roster" data-view="roster">Roster</a>
+    <a href="/?view=anomalies" data-view="anomalies">Anomalies</a>
+    <a href="/?view=verify" data-view="verify">Verify</a>
+    <a href="/?view=export" data-view="export">Export</a>
+  </nav>
+  <div class="statusline">
+    <span class="pill" id="chain-pill">chain &hellip;</span>
+    <span class="clock" id="clock"></span>
+  </div>
+</header>
+
+<main id="app" class="wrap">
+  <noscript>Roll Call needs JavaScript for the live views. The JSON API and the CSV exports work without it:
+    <code>/api/state</code>, <code>/api/export/attendance.csv</code>.</noscript>
+</main>
+
+<footer class="foot">
+  <span>Roll Call v1.0 &middot; MIT &middot; python3 standard library only</span>
+  <span id="foot-db"></span>
+</footer>
+
+<script id="boot" type="application/json">__BOOT_JSON__</script>
+<script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+# local databases produced by running the app
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+# demo/video work directories
+tools/_work/
+docs/media/_work/
+# python
+__pycache__/
+*.pyc
+.DS_Store
